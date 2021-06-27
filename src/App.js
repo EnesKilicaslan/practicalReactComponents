@@ -3,7 +3,20 @@ import { FaEyeSlash, FaEye, FaQuestion } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import "react-tippy/dist/tippy.css";
 import { Tooltip } from "react-tippy";
+
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { notify } from "node-notifier";
+
 import "./App.css";
+
+const ToastComponent = ({ closeToast, toastProps }) => {
+  console.log("ToastProps", toastProps);
+  console.log("closeToast:", closeToast);
+  return (
+    <div style={{ marginLeft: "0px" }}>Toastin with the related component,</div>
+  );
+};
 
 const QuestionTooltip = () => {
   return (
@@ -29,6 +42,10 @@ const TooltipContent = () => {
 };
 
 function App() {
+  const notify = (content) => {
+    toast(<ToastComponent content={content} />);
+  };
+
   return (
     <div className="App">
       <IconContext.Provider value={{ color: "red", size: "1rem" }}>
@@ -47,6 +64,29 @@ function App() {
             <FaQuestion> </FaQuestion>
           </Tooltip>
         </div>
+
+        <div style={{ margin: "100px" }}>
+          <button
+            onClick={() => {
+              notify("First button");
+            }}
+          >
+            Notify
+          </button>
+          <button
+            onClick={() => {
+              notify("Second button");
+            }}
+          >
+            Notify
+          </button>
+        </div>
+
+        <ToastContainer
+          hideProgressBar={true}
+          autoClose={5000}
+          position="bottom-right"
+        />
       </IconContext.Provider>
     </div>
   );
