@@ -13,6 +13,7 @@ import { CircleLoader, FadeLoader } from "react-spinners";
 import { Pie } from "react-chartjs-2";
 
 import "./App.css";
+import UseStateExample from "./components/UseStateExample";
 
 const customModalStyle = {
   content: {
@@ -180,6 +181,8 @@ function App() {
           </div>
         </div>
       </IconContext.Provider>
+
+      <UseStateExample />
     </div>
   );
 }
