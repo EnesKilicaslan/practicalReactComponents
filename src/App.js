@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { IoAddSharp } from "react-icons/io5";
 import { FaEyeSlash, FaEye, FaQuestion } from "react-icons/fa";
 import { IconContext } from "react-icons";
@@ -6,9 +7,30 @@ import { Tooltip } from "react-tippy";
 
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { notify } from "node-notifier";
+
+import ReactModal from "react-modal";
+import {
+  BeatLoader,
+  BounceLoader,
+  BarLoader,
+  ClipLoader,
+  MoonLoader,
+  CircleLoader,
+  FadeLoader,
+} from "react-spinners";
 
 import "./App.css";
+
+const customModalStyle = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
 
 const ToastComponent = ({ closeToast, toastProps }) => {
   console.log("ToastProps", toastProps);
@@ -41,7 +63,11 @@ const TooltipContent = () => {
   );
 };
 
+ReactModal.setAppElement("#root");
+
 function App() {
+  const [modalState, setModalState] = useState(false);
+
   const notify = (content) => {
     toast(<ToastComponent content={content} />);
   };
@@ -82,11 +108,42 @@ function App() {
           </button>
         </div>
 
+        <button
+          onClick={() => {
+            setModalState(true);
+          }}
+        >
+          Open modal
+        </button>
+        <ReactModal
+          isOpen={modalState}
+          parentSelector={() => document.querySelector("#root")}
+          onRequestClose={() => {
+            setModalState(false);
+          }}
+          style={customModalStyle}
+          shouldCloseOnOverlayClick={false}
+        >
+          <h2> This is a modal</h2>
+        </ReactModal>
+
         <ToastContainer
           hideProgressBar={true}
           autoClose={5000}
           position="bottom-right"
         />
+        {/* 
+        <div style={{ margin: 50 }}>
+          <ClipLoader size={24} color={"#233233"} loading={false} />
+        </div>
+
+        <div style={{ margin: 150 }}>
+          <CircleLoader size={24} color={"#233233"} loading />
+        </div> */}
+
+        <div style={{ margin: 150 }}>
+          <FadeLoader size={48} color="#50BED7" loading={true} />
+        </div>
       </IconContext.Provider>
     </div>
   );
