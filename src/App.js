@@ -9,15 +9,8 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import ReactModal from "react-modal";
-import {
-  BeatLoader,
-  BounceLoader,
-  BarLoader,
-  ClipLoader,
-  MoonLoader,
-  CircleLoader,
-  FadeLoader,
-} from "react-spinners";
+import { CircleLoader, FadeLoader } from "react-spinners";
+import { Pie } from "react-chartjs-2";
 
 import "./App.css";
 
@@ -141,8 +134,50 @@ function App() {
           <CircleLoader size={24} color={"#233233"} loading />
         </div> */}
 
-        <div style={{ margin: 150 }}>
+        <div style={{ margin: 250 }}>
           <FadeLoader size={48} color="#50BED7" loading={true} />
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginTop: "160px",
+          }}
+        >
+          <div
+            style={{
+              width: "400px",
+            }}
+          >
+            <Pie
+              data={{
+                datasets: [
+                  {
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                      "rgba(255, 99, 132, 0.2)",
+                      "rgba(54, 162, 235, 0.2)",
+                      "rgba(255, 206, 86, 0.2)",
+                      "rgba(75, 192, 192, 0.2)",
+                      "rgba(153, 102, 255, 0.2)",
+                      "rgba(255, 159, 64, 0.2)",
+                    ],
+                    borderColor: [
+                      "rgba(255, 99, 132, 1)",
+                      "rgba(54, 162, 235, 1)",
+                      "rgba(255, 206, 86, 1)",
+                      "rgba(75, 192, 192, 1)",
+                      "rgba(153, 102, 255, 1)",
+                      "rgba(255, 159, 64, 1)",
+                    ],
+                    borderWidth: 3,
+                  },
+                ],
+              }}
+            />
+          </div>
         </div>
       </IconContext.Provider>
     </div>

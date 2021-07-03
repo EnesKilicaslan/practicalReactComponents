@@ -40,3 +40,7 @@
 .Toastify__toast--success {
   background-color: pink;
 }
+
+.chart {
+  width: 400px;
+}
