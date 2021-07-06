@@ -15,6 +15,9 @@ import { Pie } from "react-chartjs-2";
 import "./App.css";
 import UseStateExample from "./components/UseStateExample";
 
+import ClassCounterExample from "./components/ClassCounterExample";
+import HookCounterExample from "./components/HookCounterExample";
+
 const customModalStyle = {
   content: {
     top: "50%",
@@ -183,6 +186,8 @@ function App() {
       </IconContext.Provider>
 
       <UseStateExample />
+      <ClassCounterExample />
+      <HookCounterExample />
     </div>
   );
 }
