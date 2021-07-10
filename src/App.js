@@ -17,6 +17,7 @@ import UseStateExample from "./components/UseStateExample";
 
 import ClassCounterExample from "./components/ClassCounterExample";
 import HookCounterExample from "./components/HookCounterExample";
+import { FetchEffectExample } from "./components/FetchEffectExample";
 
 const customModalStyle = {
   content: {
@@ -71,7 +72,8 @@ function App() {
 
   return (
     <div className="App">
-      <IconContext.Provider value={{ color: "red", size: "1rem" }}>
+      <FetchEffectExample />
+      {/* <IconContext.Provider value={{ color: "red", size: "1rem" }}>
         <IoAddSharp color="black" size="5rem" />
         <FaEye />
         <FaEyeSlash />
@@ -129,14 +131,6 @@ function App() {
           autoClose={5000}
           position="bottom-right"
         />
-        {/* 
-        <div style={{ margin: 50 }}>
-          <ClipLoader size={24} color={"#233233"} loading={false} />
-        </div>
-
-        <div style={{ margin: 150 }}>
-          <CircleLoader size={24} color={"#233233"} loading />
-        </div> */}
 
         <div style={{ margin: 250 }}>
           <FadeLoader size={48} color="#50BED7" loading={true} />
@@ -187,7 +181,7 @@ function App() {
 
       <UseStateExample />
       <ClassCounterExample />
-      <HookCounterExample />
+      <HookCounterExample /> */}
     </div>
   );
 }
