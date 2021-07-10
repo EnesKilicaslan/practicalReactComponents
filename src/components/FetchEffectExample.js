@@ -32,7 +32,7 @@ export function FetchEffectExample() {
       >
         Fetch data
       </button>
-      <div style={{ width: "auto", height: 200, padding: 200 }}>{post}</div>;
+      <div style={{ width: "auto", height: 200, padding: 200 }}>{post}</div>
     </>
   );
 }

@@ -18,6 +18,8 @@ import UseStateExample from "./components/UseStateExample";
 import ClassCounterExample from "./components/ClassCounterExample";
 import HookCounterExample from "./components/HookCounterExample";
 import { FetchEffectExample } from "./components/FetchEffectExample";
+import { username, language } from "./components/context";
+import ContextParentExample from "./components/ContextParentExample";
 
 const customModalStyle = {
   content: {
@@ -73,6 +75,12 @@ function App() {
   return (
     <div className="App">
       <FetchEffectExample />
+
+      <username.Provider value={"enes"}>
+        <language.Provider value={"ingilicce"}>
+          <ContextParentExample />
+        </language.Provider>
+      </username.Provider>
       {/* <IconContext.Provider value={{ color: "red", size: "1rem" }}>
         <IoAddSharp color="black" size="5rem" />
         <FaEye />
