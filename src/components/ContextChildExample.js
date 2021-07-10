@@ -1,23 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { username, language } from "./context";
 
 export function ContextChildExample() {
+  const name = useContext(username);
+  const lang = useContext(language);
+
   return (
-    <username.Consumer>
-      {(username) => {
-        return (
-          <language.Consumer>
-            {(language) => {
-              return (
-                <div>
-                  username: {username}, language: {language}
-                </div>
-              );
-            }}
-          </language.Consumer>
-        );
-      }}
-    </username.Consumer>
+    <div>
+      username: {name}, language: {lang}
+    </div>
   );
 }
 
