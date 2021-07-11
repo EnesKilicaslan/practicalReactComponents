@@ -21,6 +21,8 @@ import { FetchEffectExample } from "./components/FetchEffectExample";
 import { username, language } from "./components/context";
 import ContextParentExample from "./components/ContextParentExample";
 
+import { CounterReducerOne } from "./components/CounterReducerOne";
+
 const customModalStyle = {
   content: {
     top: "50%",
@@ -81,6 +83,7 @@ function App() {
           <ContextParentExample />
         </language.Provider>
       </username.Provider>
+      <CounterReducerOne />
       {/* <IconContext.Provider value={{ color: "red", size: "1rem" }}>
         <IoAddSharp color="black" size="5rem" />
         <FaEye />
