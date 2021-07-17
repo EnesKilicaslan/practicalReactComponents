@@ -26,3 +26,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 useCallback is a hook that will return memoized version of the callback function that only changes if one of the dependencies has changed
 
 It is usefull when passing down to the optimized child components that rely on reference equality to prevent unnecessray renders
+
+useMemo is similar to useCallback, however it differs as the following
+
+useCallback caches provided function instance itself whereas useMemo invokes the provided function and caches its result.
