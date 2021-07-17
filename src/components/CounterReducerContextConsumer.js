@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { CounterContext } from "./CounterReducerContextProvider";
 
 export function CounterReducerContextConsumer() {
-  //const [counterState, counterDispatch] = useContext(CounterContext);
   const counterContext = useContext(CounterContext);
   return (
     <div>

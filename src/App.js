@@ -23,6 +23,8 @@ import ContextParentExample from "./components/ContextParentExample";
 
 import { CounterReducerOne } from "./components/CounterReducerOne";
 import { CounterReducerContextProvider } from "./components/CounterReducerContextProvider";
+import DataFetchingUseReducer from "./components/DataFetchingUseReducer";
+
 const customModalStyle = {
   content: {
     top: "50%",
@@ -86,6 +88,9 @@ function App() {
       <CounterReducerOne />
       <h1>useReducer and useContext global state management</h1>
       <CounterReducerContextProvider />
+
+      <DataFetchingUseReducer />
+
       {/* <IconContext.Provider value={{ color: "red", size: "1rem" }}>
         <IoAddSharp color="black" size="5rem" />
         <FaEye />
