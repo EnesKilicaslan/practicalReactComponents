@@ -26,6 +26,8 @@ import { CounterReducerContextProvider } from "./components/CounterReducerContex
 import DataFetchingUseReducer from "./components/DataFetchingUseReducer";
 import { CounterWithUseMemo } from "./components/CounterWithUseMemo";
 
+import { FocusInputUseRef } from "./components/FocusInputUseRef";
+
 const customModalStyle = {
   content: {
     top: "50%",
@@ -94,6 +96,7 @@ function App() {
 
       <h3>useMemo</h3>
       <CounterWithUseMemo />
+      <FocusInputUseRef />
       {/* <IconContext.Provider value={{ color: "red", size: "1rem" }}>
         <IoAddSharp color="black" size="5rem" />
         <FaEye />
