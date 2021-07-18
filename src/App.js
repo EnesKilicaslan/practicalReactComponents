@@ -32,7 +32,7 @@ import { CounterRefClass } from "./components/CounterRefClass";
 import { CounterRefHook } from "./components/CounterRefHook";
 
 import { CounterCustomHook } from "./components/CounterCustomHook";
-
+import { FormCustomHook } from "./components/FormCustomHook";
 const customModalStyle = {
   content: {
     top: "50%",
@@ -106,6 +106,11 @@ function App() {
       <CounterRefHook /> */}
 
       <CounterCustomHook />
+      <br />
+      <br />
+      <h2>Form hook</h2>
+
+      <FormCustomHook />
       {/* <IconContext.Provider value={{ color: "red", size: "1rem" }}>
         <IoAddSharp color="black" size="5rem" />
         <FaEye />
