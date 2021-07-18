@@ -28,6 +28,9 @@ import { CounterWithUseMemo } from "./components/CounterWithUseMemo";
 
 import { FocusInputUseRef } from "./components/FocusInputUseRef";
 
+import { CounterRefClass } from "./components/CounterRefClass";
+import { CounterRefHook } from "./components/CounterRefHook";
+
 const customModalStyle = {
   content: {
     top: "50%",
@@ -82,7 +85,6 @@ function App() {
   return (
     <div className="App">
       <FetchEffectExample />
-
       <username.Provider value={"enes"}>
         <language.Provider value={"ingilicce"}>
           <ContextParentExample />
@@ -91,12 +93,15 @@ function App() {
       <CounterReducerOne />
       <h1>useReducer and useContext global state management</h1>
       <CounterReducerContextProvider />
-
       <DataFetchingUseReducer />
-
       <h3>useMemo</h3>
       <CounterWithUseMemo />
       <FocusInputUseRef />
+      <h2> Ref Counter </h2>
+      -----
+      <CounterRefClass />
+      -----
+      <CounterRefHook />
       {/* <IconContext.Provider value={{ color: "red", size: "1rem" }}>
         <IoAddSharp color="black" size="5rem" />
         <FaEye />
