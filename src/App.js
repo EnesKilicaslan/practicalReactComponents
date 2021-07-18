@@ -31,6 +31,8 @@ import { FocusInputUseRef } from "./components/FocusInputUseRef";
 import { CounterRefClass } from "./components/CounterRefClass";
 import { CounterRefHook } from "./components/CounterRefHook";
 
+import { CounterCustomHook } from "./components/CounterCustomHook";
+
 const customModalStyle = {
   content: {
     top: "50%",
@@ -84,7 +86,7 @@ function App() {
 
   return (
     <div className="App">
-      <FetchEffectExample />
+      {/* <FetchEffectExample />
       <username.Provider value={"enes"}>
         <language.Provider value={"ingilicce"}>
           <ContextParentExample />
@@ -101,7 +103,9 @@ function App() {
       -----
       <CounterRefClass />
       -----
-      <CounterRefHook />
+      <CounterRefHook /> */}
+
+      <CounterCustomHook />
       {/* <IconContext.Provider value={{ color: "red", size: "1rem" }}>
         <IoAddSharp color="black" size="5rem" />
         <FaEye />
