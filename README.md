@@ -38,3 +38,6 @@ Rendering does not mean changing the DOM. There are two phases to update UI as r
 - The setter function from useState will cause rerender. However, the exception is updating the state to the same value. If the state updated to the same value right after the initial render, then the component will not re-render. But if the state is updated after the re-render, then React will re-render that specific component and bails out from any subsequent re-renders.
 
 - The same rendering mechanisim applies for the dispatch method of useReducer
+
+- For-non primitive type states (like objects and arrays) referential equality is used to decide if the state changed or not. This is why we can not directly modify the state object and use it as a parameter to setState function. Instead, we need to create a new object and use it as a paremeter to the setState function.
+  So, mutating an object or array as state, will not cause re-render when used with useState or useReducer
