@@ -41,3 +41,7 @@ Rendering does not mean changing the DOM. There are two phases to update UI as r
 
 - For-non primitive type states (like objects and arrays) referential equality is used to decide if the state changed or not. This is why we can not directly modify the state object and use it as a parameter to setState function. Instead, we need to create a new object and use it as a paremeter to the setState function.
   So, mutating an object or array as state, will not cause re-render when used with useState or useReducer
+
+- When a parant component renders, React will recursively renders all of its child components. Child compoennts go through the render phase but not commit phase. So, DOM represented by Child component is never updated.
+  - If new state is the same as the old state after the initial render, then both parent and child components are not re-rendered.
+  - If new state is the same as the old state after the re-render, then parent is rendered only once and child is never re-rendered.
