@@ -43,5 +43,9 @@ Rendering does not mean changing the DOM. There are two phases to update UI as r
   So, mutating an object or array as state, will not cause re-render when used with useState or useReducer
 
 - When a parant component renders, React will recursively renders all of its child components. Child compoennts go through the render phase but not commit phase. So, DOM represented by Child component is never updated.
+
   - If new state is the same as the old state after the initial render, then both parent and child components are not re-rendered.
   - If new state is the same as the old state after the re-render, then parent is rendered only once and child is never re-rendered.
+
+- As mentioned before, when a parent component renders, React will recursively renders all of the child components. "Unnecessary renders" where the child component goes to render phase but not commit phase.
+  We can extract child component and instead pass it down as props to the parent component. This will prevent "unnecessary renders". Because React is sure about that the props can not be changed by the related component, React can deduce that when the state of the parent component is changed, child component which is coming as props will not need to be re-rendered. This can be thought as an optimization technique.
