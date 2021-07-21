@@ -51,3 +51,7 @@ Rendering does not mean changing the DOM. There are two phases to update UI as r
   We can extract child component and instead pass it down as props to the parent component. This will prevent "unnecessary renders". Because React is sure about that the props can not be changed by the related component, React can deduce that when the state of the parent component is changed, child component which is coming as props will not need to be re-rendered. This can be thought as an optimization technique.
 
 - Another optimization technique to prevent from "unnecessary renders" is using `React.memo`. React.memo is a HOC that tells React that the related child component should only be re-rendered when only its props have changed. React.memo performs a shallow comparison of the previous props and new props.
+
+#### Incorrect memoization
+
+- in React, props.children is always a new reference. If a component with props.children is wrapped with memo, the memo will be meaningless and the component will be rendered in each render because its props will change every time.
