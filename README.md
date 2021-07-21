@@ -55,3 +55,14 @@ Rendering does not mean changing the DOM. There are two phases to update UI as r
 #### Incorrect memoization
 
 - in React, props.children is always a new reference. If a component with props.children is wrapped with memo, the memo will be meaningless and the component will be rendered in each render because its props will change every time.
+
+- Two ways of re-rendering is discussed so far,
+
+  1. calling setter function of useState and dispatch function of useReducer
+  2. parent component rendering
+
+  now third one appears as the following: 3. context api
+
+  let's assume hierarchy is as following:
+  Parent -> Child A -> Child B -> Child C, Parent provides context and Child C consumes.
+  When state of the parent compoenent changes all of the child components are rendered. However we can optimize it with React.memo or Same Element Referencing. We can memoize Child A or we can send Child A as props.children to the Parent component. This way, React will only render Parent and Child C when state of the Parent is changed.
